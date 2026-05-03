@@ -57,7 +57,7 @@ Function ExecuteCommand ($commandPath, $commandArguments)
 $process = ExecuteCommand -commandPath $executablePath -commandArguments $arguments
 
 # Get the output value
-$value = [int]($process.stdout)
+$value = [int]($process.stdout).Trim('"')
 
 switch ($scriptArgument) {
     "increase" {
